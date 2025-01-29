@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .profile-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    button {
+      background-color: #dc3545;
+      color: white;
+      padding: 10px;
+      width: 100px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Welcome to your Profile</h2>
+    <p>Your session is active.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const SESSION_DURATION = 60 * 60 * 1000; // 1 hour
+
+    // Check if session is expired
+    window.onload = function () {
+      const lastLoginTime = localStorage.getItem('loginTime');
+      if (!lastLoginTime || (Date.now() - lastLoginTime >= SESSION_DURATION)) {
+        alert('Session expired. Please login again.');
+        window.location.href = 'index.html';
+      }
+    };
+
+    // Handle logout
+    function logout() {
+      localStorage.removeItem('loginTime');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
