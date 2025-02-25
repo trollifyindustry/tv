@@ -250,7 +250,7 @@
     <br><br>
     <label for="subject4">Subject 4: </label> <input type="text" id="subject4" value="Science">
     <label for="date4">Date: </label> <input type="date" id="date4">
-    <label for="time4">Time: </label> <input type="text" id="time4" value="09:00 AM to 12:00 PM">
+    <label for="time4">Time: </label> <input type="text" id="time4" value="09:00 AM to 12:00 PM"> 
 </div>
 
 <!-- Print Button -->
@@ -286,13 +286,13 @@
             const admitCard = `
                 
                 <div class="admit-card">
-                    <img class="logo" src="https://i.ibb.co/VkTVzbj/snpsheader-1.png">
+                    <img class="logo" src="https://i.ibb.co/ZwDdfrN/20250225-123453.jpg">
                     <div class="admit-card-header">${examType} <br>Admit Card</div>
                     <div class="admit-card-info">
-                <p><strong>Student Name:</strong> ${studentName}
-                <strong class="text4">Class:</strong> ${studentClass}</p>
-                <p><strong>Roll Number:</strong> ${rollNo}
-                <strong class="text4">Date of Birth:</strong> ${dob}</p>
+                <p><strong>STUDENT NAME :</strong> ${studentName}
+                <strong class="text4">CLASS :</strong> ${studentClass}</p>
+                <p><strong>ROLL NO</strong> ${rollNo}
+                <strong class="text4">DATE OF BIRTH :</strong> ${dob}</p>
                 
                        </div>
                     <p class="text3"> Subject-wise Exam Timetable</p>
@@ -319,8 +319,9 @@
                      <p class="text1">2. छात्र समय से 30 मिनट पहले परीक्षा केंद्र पर पहुंचें।</p>
                      <p class="text1">3. परीक्षा हॉल में केवल पेन, पेंसिल, और एडमिट कार्ड ही लाएं। मोबाइल फोन, कैलकुलेटर
                      या अन्य इलेक्ट्रॉनिक उपकरणों की अनुमति नहीं है।</p>
-                     <p class="text1">4. किसी भी प्रकार की अनुचित साधनों का उपयोग करने पर परीक्षा रद्द की जा सकती है।</p>
-                     <p class="text1">5. स्कूल की यूनि फॉ र्म में आना अनि वा र्य है। </p>
+                     
+                     
+                     <p class="text1">4. स्कूल की यूनि फॉ र्म में आना अनि वा र्य है। </p>
                     <p class="text2">Teacher Signature:................................
                     Principal Signature </p>
                     <img src="https://i.postimg.cc/FzqPcxBX/20241008-083425.png" class="prem-name">
@@ -396,28 +397,3 @@
 
 </body>
 </html>
-
-<!---
-function doGet() {
-  return ContentService.createTextOutput(getStudentData()).setMimeType(ContentService.MimeType.JSON);
-}
-
-function getStudentData() {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet2");
-  var data = sheet.getDataRange().getValues();
-  var jsonData = [];
-  
-  for (var i = 1; i < data.length; i++) {  // Skip header row
-    jsonData.push({
-      okstudent_name: data[i][0],
-      okfather_name: data[i][1],
-      okclass: data[i][2],
-      okroll_no: data[i][3],
-      okdob: data[i][4]
-    });
-  }
-  
-  return JSON.stringify(jsonData);
-}
-
-
